@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 
-echo "Setting up PG"
+sudo -u postgres createuser -s pgw; echo "created user"
+sudo -u postgres createdb pgw-main; echo "created database"
