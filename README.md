@@ -74,17 +74,19 @@ Here's the setup procedure:
 
         psql -U pgw -d pgw-main
 
-to ensure everything works. If that didn't work, 
+    to ensure everything works. If that didn't work, 
 
         sudo su - postgres
         psql -U pgw -d pgw-main 
         
-Email me if this didn't work.
+    Email me if this didn't work.
         
-1. From your _host_ box, try to configure a connection to the PostgreSQL on the `guest` box. In DataGrip, create a new project (if you have the code checked out, you can select it when the prompt appears). Here's my connection setup window (Image TBA):
+1. From your _host_ box, try to configure a connection to the PostgreSQL on the `guest` box. In DataGrip, create a new project (if you have the code checked out, you can select it when the prompt appears). Here are my connection setup windows:
+    <img width="762" alt="screenshot 2019-02-25 at 3 38 21 pm" src="https://user-images.githubusercontent.com/90904/53334254-3c00d380-391e-11e9-8954-a23392e84e9e.png">
+    <img width="912" alt="screenshot 2019-02-25 at 3 37 35 pm" src="https://user-images.githubusercontent.com/90904/53334256-3c00d380-391e-11e9-800b-0cbefe1fe377.png">
 1. One final thing to check: [Editor integration with `pgcli`][pgcli-editor]. Make sure `\e` works from your `pgcli` prompt, and by works I mean:
     1. It opens your preferred editor
-    2. It populates the query on the command line after editing is done. Here's a gif that shows it in action (GIF TBA):
+    2. It populates the query on the command line after editing is done:
 
 
 ### Final Checklist
