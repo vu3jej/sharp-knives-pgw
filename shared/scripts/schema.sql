@@ -47,6 +47,78 @@ SET default_tablespace = '';
 SET default_with_oids = false;
 
 --
+-- Name: authors; Type: TABLE; Schema: public; Owner: pgw
+--
+
+CREATE TABLE public.authors (
+    id integer NOT NULL,
+    name character varying NOT NULL,
+    bio text,
+    created_at timestamp without time zone DEFAULT now()
+);
+
+
+ALTER TABLE public.authors OWNER TO pgw;
+
+--
+-- Name: authors_books; Type: TABLE; Schema: public; Owner: pgw
+--
+
+CREATE TABLE public.authors_books (
+    id integer NOT NULL,
+    book_id integer NOT NULL,
+    author_id integer NOT NULL,
+    "position" integer NOT NULL,
+    created_at timestamp without time zone DEFAULT now(),
+    CONSTRAINT author_position_must_be_positive CHECK (("position" > 0))
+);
+
+
+ALTER TABLE public.authors_books OWNER TO pgw;
+
+--
+-- Name: authors_books_id_seq; Type: SEQUENCE; Schema: public; Owner: pgw
+--
+
+CREATE SEQUENCE public.authors_books_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.authors_books_id_seq OWNER TO pgw;
+
+--
+-- Name: authors_books_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: pgw
+--
+
+ALTER SEQUENCE public.authors_books_id_seq OWNED BY public.authors_books.id;
+
+
+--
+-- Name: authors_id_seq; Type: SEQUENCE; Schema: public; Owner: pgw
+--
+
+CREATE SEQUENCE public.authors_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.authors_id_seq OWNER TO pgw;
+
+--
+-- Name: authors_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: pgw
+--
+
+ALTER SEQUENCE public.authors_id_seq OWNED BY public.authors.id;
+
+
+--
 -- Name: books; Type: TABLE; Schema: public; Owner: pgw
 --
 
@@ -58,6 +130,40 @@ CREATE TABLE public.books (
 
 
 ALTER TABLE public.books OWNER TO pgw;
+
+--
+-- Name: books_genres; Type: TABLE; Schema: public; Owner: pgw
+--
+
+CREATE TABLE public.books_genres (
+    id integer NOT NULL,
+    book_id integer NOT NULL,
+    genre_id integer NOT NULL
+);
+
+
+ALTER TABLE public.books_genres OWNER TO pgw;
+
+--
+-- Name: books_genres_id_seq; Type: SEQUENCE; Schema: public; Owner: pgw
+--
+
+CREATE SEQUENCE public.books_genres_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.books_genres_id_seq OWNER TO pgw;
+
+--
+-- Name: books_genres_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: pgw
+--
+
+ALTER SEQUENCE public.books_genres_id_seq OWNED BY public.books_genres.id;
+
 
 --
 -- Name: books_id_seq; Type: SEQUENCE; Schema: public; Owner: pgw
@@ -81,6 +187,42 @@ ALTER SEQUENCE public.books_id_seq OWNED BY public.books.id;
 
 
 --
+-- Name: books_on_the_shelves; Type: TABLE; Schema: public; Owner: pgw
+--
+
+CREATE TABLE public.books_on_the_shelves (
+    id integer NOT NULL,
+    edition_id integer NOT NULL,
+    shelf_id integer NOT NULL,
+    "position" integer NOT NULL,
+    CONSTRAINT books_on_the_shelves_position_check CHECK (("position" > 0))
+);
+
+
+ALTER TABLE public.books_on_the_shelves OWNER TO pgw;
+
+--
+-- Name: books_on_the_shelves_id_seq; Type: SEQUENCE; Schema: public; Owner: pgw
+--
+
+CREATE SEQUENCE public.books_on_the_shelves_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.books_on_the_shelves_id_seq OWNER TO pgw;
+
+--
+-- Name: books_on_the_shelves_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: pgw
+--
+
+ALTER SEQUENCE public.books_on_the_shelves_id_seq OWNED BY public.books_on_the_shelves.id;
+
+
+--
 -- Name: editions; Type: TABLE; Schema: public; Owner: pgw
 --
 
@@ -88,7 +230,8 @@ CREATE TABLE public.editions (
     id integer NOT NULL,
     name character varying NOT NULL,
     created_at timestamp without time zone DEFAULT now(),
-    book_id integer
+    book_id integer NOT NULL,
+    current boolean DEFAULT false
 );
 
 
@@ -116,6 +259,163 @@ ALTER SEQUENCE public.editions_id_seq OWNED BY public.editions.id;
 
 
 --
+-- Name: genres; Type: TABLE; Schema: public; Owner: pgw
+--
+
+CREATE TABLE public.genres (
+    id integer NOT NULL,
+    name character varying NOT NULL,
+    created_at timestamp without time zone DEFAULT now()
+);
+
+
+ALTER TABLE public.genres OWNER TO pgw;
+
+--
+-- Name: genres_id_seq; Type: SEQUENCE; Schema: public; Owner: pgw
+--
+
+CREATE SEQUENCE public.genres_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.genres_id_seq OWNER TO pgw;
+
+--
+-- Name: genres_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: pgw
+--
+
+ALTER SEQUENCE public.genres_id_seq OWNED BY public.genres.id;
+
+
+--
+-- Name: ratings; Type: TABLE; Schema: public; Owner: pgw
+--
+
+CREATE TABLE public.ratings (
+    id integer NOT NULL,
+    user_id integer NOT NULL,
+    edition_id integer NOT NULL,
+    rating integer NOT NULL,
+    review text,
+    CONSTRAINT ratings_rating_check CHECK (((0 < rating) AND (rating <= 5)))
+);
+
+
+ALTER TABLE public.ratings OWNER TO pgw;
+
+--
+-- Name: ratings_id_seq; Type: SEQUENCE; Schema: public; Owner: pgw
+--
+
+CREATE SEQUENCE public.ratings_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.ratings_id_seq OWNER TO pgw;
+
+--
+-- Name: ratings_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: pgw
+--
+
+ALTER SEQUENCE public.ratings_id_seq OWNED BY public.ratings.id;
+
+
+--
+-- Name: shelves; Type: TABLE; Schema: public; Owner: pgw
+--
+
+CREATE TABLE public.shelves (
+    id integer NOT NULL,
+    name public.citext NOT NULL,
+    user_id integer NOT NULL,
+    description text
+);
+
+
+ALTER TABLE public.shelves OWNER TO pgw;
+
+--
+-- Name: shelves_id_seq; Type: SEQUENCE; Schema: public; Owner: pgw
+--
+
+CREATE SEQUENCE public.shelves_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.shelves_id_seq OWNER TO pgw;
+
+--
+-- Name: shelves_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: pgw
+--
+
+ALTER SEQUENCE public.shelves_id_seq OWNED BY public.shelves.id;
+
+
+--
+-- Name: users; Type: TABLE; Schema: public; Owner: pgw
+--
+
+CREATE TABLE public.users (
+    id integer NOT NULL,
+    login character varying NOT NULL,
+    email public.citext NOT NULL,
+    created_at timestamp without time zone DEFAULT now(),
+    admin boolean DEFAULT false NOT NULL,
+    CONSTRAINT login_size_limits CHECK (((length((login)::text) >= 3) AND ((admin AND (length((login)::text) <= 100)) OR ((NOT admin) AND (length((login)::text) <= 50)))))
+);
+
+
+ALTER TABLE public.users OWNER TO pgw;
+
+--
+-- Name: users_id_seq; Type: SEQUENCE; Schema: public; Owner: pgw
+--
+
+CREATE SEQUENCE public.users_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.users_id_seq OWNER TO pgw;
+
+--
+-- Name: users_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: pgw
+--
+
+ALTER SEQUENCE public.users_id_seq OWNED BY public.users.id;
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: pgw
+--
+
+ALTER TABLE ONLY public.authors ALTER COLUMN id SET DEFAULT nextval('public.authors_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: pgw
+--
+
+ALTER TABLE ONLY public.authors_books ALTER COLUMN id SET DEFAULT nextval('public.authors_books_id_seq'::regclass);
+
+
+--
 -- Name: id; Type: DEFAULT; Schema: public; Owner: pgw
 --
 
@@ -126,7 +426,89 @@ ALTER TABLE ONLY public.books ALTER COLUMN id SET DEFAULT nextval('public.books_
 -- Name: id; Type: DEFAULT; Schema: public; Owner: pgw
 --
 
+ALTER TABLE ONLY public.books_genres ALTER COLUMN id SET DEFAULT nextval('public.books_genres_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: pgw
+--
+
+ALTER TABLE ONLY public.books_on_the_shelves ALTER COLUMN id SET DEFAULT nextval('public.books_on_the_shelves_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: pgw
+--
+
 ALTER TABLE ONLY public.editions ALTER COLUMN id SET DEFAULT nextval('public.editions_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: pgw
+--
+
+ALTER TABLE ONLY public.genres ALTER COLUMN id SET DEFAULT nextval('public.genres_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: pgw
+--
+
+ALTER TABLE ONLY public.ratings ALTER COLUMN id SET DEFAULT nextval('public.ratings_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: pgw
+--
+
+ALTER TABLE ONLY public.shelves ALTER COLUMN id SET DEFAULT nextval('public.shelves_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: pgw
+--
+
+ALTER TABLE ONLY public.users ALTER COLUMN id SET DEFAULT nextval('public.users_id_seq'::regclass);
+
+
+--
+-- Name: authors_books_position_unique; Type: CONSTRAINT; Schema: public; Owner: pgw
+--
+
+ALTER TABLE ONLY public.authors_books
+    ADD CONSTRAINT authors_books_position_unique UNIQUE (book_id, "position");
+
+
+--
+-- Name: authors_pkey; Type: CONSTRAINT; Schema: public; Owner: pgw
+--
+
+ALTER TABLE ONLY public.authors
+    ADD CONSTRAINT authors_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: books_are_ordered_in_a_shelf; Type: CONSTRAINT; Schema: public; Owner: pgw
+--
+
+ALTER TABLE ONLY public.books_on_the_shelves
+    ADD CONSTRAINT books_are_ordered_in_a_shelf UNIQUE (shelf_id, "position");
+
+
+--
+-- Name: books_genres_pkey; Type: CONSTRAINT; Schema: public; Owner: pgw
+--
+
+ALTER TABLE ONLY public.books_genres
+    ADD CONSTRAINT books_genres_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: books_on_the_shelves_pkey; Type: CONSTRAINT; Schema: public; Owner: pgw
+--
+
+ALTER TABLE ONLY public.books_on_the_shelves
+    ADD CONSTRAINT books_on_the_shelves_pkey PRIMARY KEY (id);
 
 
 --
@@ -138,6 +520,14 @@ ALTER TABLE ONLY public.books
 
 
 --
+-- Name: can_author_only_once; Type: CONSTRAINT; Schema: public; Owner: pgw
+--
+
+ALTER TABLE ONLY public.authors_books
+    ADD CONSTRAINT can_author_only_once UNIQUE (book_id, author_id);
+
+
+--
 -- Name: editions_pkey; Type: CONSTRAINT; Schema: public; Owner: pgw
 --
 
@@ -146,11 +536,147 @@ ALTER TABLE ONLY public.editions
 
 
 --
+-- Name: email_must_be_unique; Type: CONSTRAINT; Schema: public; Owner: pgw
+--
+
+ALTER TABLE ONLY public.users
+    ADD CONSTRAINT email_must_be_unique UNIQUE (email);
+
+
+--
+-- Name: genres_pkey; Type: CONSTRAINT; Schema: public; Owner: pgw
+--
+
+ALTER TABLE ONLY public.genres
+    ADD CONSTRAINT genres_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: one_book_once_in_a_shelf; Type: CONSTRAINT; Schema: public; Owner: pgw
+--
+
+ALTER TABLE ONLY public.books_on_the_shelves
+    ADD CONSTRAINT one_book_once_in_a_shelf UNIQUE (shelf_id, edition_id);
+
+
+--
+-- Name: only_one_current_edition; Type: CONSTRAINT; Schema: public; Owner: pgw
+--
+
+ALTER TABLE ONLY public.editions
+    ADD CONSTRAINT only_one_current_edition EXCLUDE USING btree (book_id WITH =) WHERE ((current = true));
+
+
+--
+-- Name: ratings_pkey; Type: CONSTRAINT; Schema: public; Owner: pgw
+--
+
+ALTER TABLE ONLY public.ratings
+    ADD CONSTRAINT ratings_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: shelves_pkey; Type: CONSTRAINT; Schema: public; Owner: pgw
+--
+
+ALTER TABLE ONLY public.shelves
+    ADD CONSTRAINT shelves_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: unique_shelves_per_user; Type: CONSTRAINT; Schema: public; Owner: pgw
+--
+
+ALTER TABLE ONLY public.shelves
+    ADD CONSTRAINT unique_shelves_per_user UNIQUE (user_id, name);
+
+
+--
+-- Name: users_pkey; Type: CONSTRAINT; Schema: public; Owner: pgw
+--
+
+ALTER TABLE ONLY public.users
+    ADD CONSTRAINT users_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: authors_books_belongs_to_author; Type: FK CONSTRAINT; Schema: public; Owner: pgw
+--
+
+ALTER TABLE ONLY public.authors_books
+    ADD CONSTRAINT authors_books_belongs_to_author FOREIGN KEY (author_id) REFERENCES public.authors(id);
+
+
+--
+-- Name: authors_books_belongs_to_book; Type: FK CONSTRAINT; Schema: public; Owner: pgw
+--
+
+ALTER TABLE ONLY public.authors_books
+    ADD CONSTRAINT authors_books_belongs_to_book FOREIGN KEY (book_id) REFERENCES public.books(id);
+
+
+--
+-- Name: books_genres_book_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: pgw
+--
+
+ALTER TABLE ONLY public.books_genres
+    ADD CONSTRAINT books_genres_book_id_fkey FOREIGN KEY (book_id) REFERENCES public.books(id);
+
+
+--
+-- Name: books_genres_genre_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: pgw
+--
+
+ALTER TABLE ONLY public.books_genres
+    ADD CONSTRAINT books_genres_genre_id_fkey FOREIGN KEY (genre_id) REFERENCES public.genres(id);
+
+
+--
+-- Name: books_on_the_shelves_edition_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: pgw
+--
+
+ALTER TABLE ONLY public.books_on_the_shelves
+    ADD CONSTRAINT books_on_the_shelves_edition_id_fkey FOREIGN KEY (edition_id) REFERENCES public.editions(id);
+
+
+--
+-- Name: books_on_the_shelves_shelf_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: pgw
+--
+
+ALTER TABLE ONLY public.books_on_the_shelves
+    ADD CONSTRAINT books_on_the_shelves_shelf_id_fkey FOREIGN KEY (shelf_id) REFERENCES public.shelves(id);
+
+
+--
 -- Name: editions_book_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: pgw
 --
 
 ALTER TABLE ONLY public.editions
     ADD CONSTRAINT editions_book_id_fkey FOREIGN KEY (book_id) REFERENCES public.books(id);
+
+
+--
+-- Name: ratings_edition_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: pgw
+--
+
+ALTER TABLE ONLY public.ratings
+    ADD CONSTRAINT ratings_edition_id_fkey FOREIGN KEY (edition_id) REFERENCES public.editions(id);
+
+
+--
+-- Name: ratings_user_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: pgw
+--
+
+ALTER TABLE ONLY public.ratings
+    ADD CONSTRAINT ratings_user_id_fkey FOREIGN KEY (user_id) REFERENCES public.users(id);
+
+
+--
+-- Name: shelves_user_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: pgw
+--
+
+ALTER TABLE ONLY public.shelves
+    ADD CONSTRAINT shelves_user_id_fkey FOREIGN KEY (user_id) REFERENCES public.users(id);
 
 
 --

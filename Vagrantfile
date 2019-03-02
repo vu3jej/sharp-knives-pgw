@@ -75,6 +75,7 @@ Vagrant.configure("2") do |config|
                       inline: <<~SHELL
                         sudo cp /vagrant_data/conf/pg_hba.conf /etc/postgresql/9.5/main/pg_hba.conf
                         sudo cp /vagrant_data/conf/postgresql.conf /etc/postgresql/9.5/main/postgresql.conf
+                        sudo cp /vagrant_data/conf/.psqlrc /var/lib/postgresql/.psqlrc
                         service postgresql restart
                       SHELL
 end
