@@ -2,8 +2,16 @@
 CREATE TABLE books (
   id         SERIAL PRIMARY KEY,
   name       VARCHAR NOT NULL, /* Name must be present */
-  created_at TIMESTAMP DEFAULT current_timestamp
+  isbn       UUID    NOT NULL UNIQUE DEFAULT gen_random_uuid(),
+  created_at TIMESTAMP               DEFAULT current_timestamp
 );
+
+CREATE EXTENSION IF NOT EXISTS pgcrypto;
+
+-- ALTER TABLE books
+--   ADD COLUMN isbn UUID NOT NULL UNIQUE DEFAULT gen_random_uuid();
+
+-- ALTER TABLE books DROP COLUMN isbn;
 
 -- And editions
 CREATE TABLE editions (
@@ -18,6 +26,9 @@ CREATE TABLE genres (
   name       VARCHAR NOT NULL,/* Name must be present */
   created_at TIMESTAMP DEFAULT current_timestamp
 );
+
+ALTER TABLE genres
+  ALTER COLUMN name TYPE CITEXT USING name::CITEXT;
 
 
 -- Edition belongs to a book
@@ -60,8 +71,8 @@ ALTER TABLE editions
 --     DEFERRABLE INITIALLY DEFERRED;
 
 -- Relax the "at least one" criterion
-ALTER TABLE books
-  DROP COLUMN initial_edition_id;
+-- ALTER TABLE books
+--   DROP COLUMN initial_edition_id;
 
 -- A good use case for using triggers
 
@@ -104,9 +115,9 @@ ALTER TABLE authors_books
   ADD CONSTRAINT can_author_only_once
     UNIQUE (book_id, author_id);
 
-ALTER TABLE authors_books
-  ADD CONSTRAINT can_author_only_once
-    EXCLUDE USING btree (book_id WITH =, author_id WITH =);
+-- ALTER TABLE authors_books
+--   ADD CONSTRAINT can_author_only_once
+--     EXCLUDE USING btree (book_id WITH =, author_id WITH =);
 
 
 -- Since position is a list, add some constraints
@@ -158,9 +169,17 @@ CREATE TABLE ratings (
   id         SERIAL PRIMARY KEY,
   user_id    INTEGER NOT NULL REFERENCES users(id),
   edition_id INTEGER NOT NULL REFERENCES editions(id),
-  rating     INTEGER NOT NULL CHECK ( 0 < rating AND rating <= 5 ),
+  rating     INTEGER NOT NULL CHECK ( 0 <= rating AND rating <= 5 ),
   review     TEXT
 );
+
+ALTER TABLE ratings
+  ADD CONSTRAINT one_review_per_edition UNIQUE (edition_id, user_id);
+CREATE UNIQUE INDEX fast_user_editions_lookup ON ratings(user_id, edition_id);
+
+-- alter TABLE ratings drop CONSTRAINT ratings_rating_check;
+-- ALTER TABLE ratings
+--   ADD CONSTRAINT ratings_rating_check CHECK ( 0 <= rating AND rating <= 5 );
 
 CREATE TABLE shelves (
   id          SERIAL PRIMARY KEY,
@@ -172,25 +191,39 @@ CREATE TABLE shelves (
 ALTER TABLE shelves
   ADD CONSTRAINT unique_shelves_per_user UNIQUE (user_id, name);
 
-CREATE TABLE books_on_the_shelves (
+CREATE TABLE editions_shelves (
   id         SERIAL PRIMARY KEY,
   edition_id INTEGER NOT NULL REFERENCES editions(id),
   shelf_id   INTEGER NOT NULL REFERENCES shelves(id),
   position   INTEGER NOT NULL CHECK ( position > 0 )
 );
 
-ALTER TABLE books_shelves
+ALTER TABLE editions_shelves
   ADD CONSTRAINT one_book_once_in_a_shelf UNIQUE (shelf_id, edition_id);
-ALTER TABLE books_shelves
+ALTER TABLE editions_shelves
   ADD CONSTRAINT books_are_ordered_in_a_shelf UNIQUE (shelf_id, position);
+
+
+-- CREATE TABLE shelves_users
+-- (
+--   id          SERIAL PRIMARY KEY,
+--   shelf_id    INTEGER NOT NULL REFERENCES shelves (id),
+--   user_id     INTEGER NOT NULL REFERENCES users (id),
+--   description TEXT
+-- );
+
+--
+-- ALTER TABLE shelves_users
+--   ADD CONSTRAINT shelves_users_uniqueness UNIQUE (shelf_id, user_id);
 
 
 -- Reset stuff
 -- Dependent
 -- DROP TABLE authors_books;
 -- DROP TABLE ratings;
--- DROP TABLE books_on_the_shelves;
+-- DROP TABLE editions_shelves;
 -- DROP TABLE books_genres;
+-- DROP TABLE shelves_users;
 --
 -- Independent
 -- DROP TABLE genres;
@@ -199,3 +232,4 @@ ALTER TABLE books_shelves
 -- DROP TABLE editions CASCADE ;
 -- DROP TABLE books;
 -- DROP TABLE users;
+
