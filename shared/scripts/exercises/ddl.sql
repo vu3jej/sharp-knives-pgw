@@ -179,9 +179,9 @@ CREATE TABLE books_on_the_shelves (
   position   INTEGER NOT NULL CHECK ( position > 0 )
 );
 
-ALTER TABLE books_on_the_shelves
+ALTER TABLE books_shelves
   ADD CONSTRAINT one_book_once_in_a_shelf UNIQUE (shelf_id, edition_id);
-ALTER TABLE books_on_the_shelves
+ALTER TABLE books_shelves
   ADD CONSTRAINT books_are_ordered_in_a_shelf UNIQUE (shelf_id, position);
 
 

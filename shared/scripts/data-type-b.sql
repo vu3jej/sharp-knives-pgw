@@ -603,477 +603,477 @@ VALUES (46, 'Nappa', 9, 'Antediluvian unutterable eldritch daemoniac cyclopean u
 -- Data for Name: books_on_the_shelves; Type: TABLE DATA; Schema: public; Owner: pgw
 --
 
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (1, 81, 1, 1);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (2, 93, 1, 2);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (3, 25, 1, 3);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (4, 94, 1, 4);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (5, 86, 1, 5);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (6, 69, 1, 6);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (7, 74, 1, 7);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (8, 71, 1, 8);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (9, 99, 1, 9);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (10, 80, 2, 1);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (11, 49, 2, 2);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (12, 7, 2, 3);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (13, 96, 2, 4);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (14, 60, 2, 5);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (15, 68, 3, 1);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (16, 14, 3, 2);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (17, 25, 3, 3);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (18, 77, 3, 4);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (19, 100, 3, 5);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (20, 34, 3, 6);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (21, 62, 3, 7);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (22, 41, 3, 8);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (23, 86, 4, 1);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (24, 77, 4, 2);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (25, 47, 4, 3);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (26, 57, 4, 4);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (27, 70, 4, 5);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (28, 73, 4, 6);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (29, 15, 5, 1);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (30, 100, 5, 2);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (31, 35, 6, 1);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (32, 59, 6, 2);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (33, 32, 6, 3);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (34, 8, 6, 4);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (35, 91, 6, 5);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (36, 43, 6, 6);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (37, 73, 6, 7);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (38, 5, 6, 8);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (39, 9, 6, 9);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (40, 96, 6, 10);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (41, 94, 7, 1);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (42, 19, 7, 2);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (43, 46, 7, 3);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (44, 12, 7, 4);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (45, 72, 7, 5);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (46, 93, 7, 6);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (47, 76, 7, 7);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (48, 3, 7, 8);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (49, 41, 7, 9);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (50, 98, 8, 1);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (51, 80, 8, 2);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (52, 7, 8, 3);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (53, 8, 8, 4);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (54, 6, 8, 5);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (55, 59, 8, 6);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (56, 85, 8, 7);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (57, 27, 8, 8);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (58, 48, 8, 9);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (59, 95, 9, 1);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (60, 56, 9, 2);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (61, 88, 9, 3);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (62, 66, 9, 4);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (63, 42, 9, 5);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (64, 80, 9, 6);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (65, 83, 9, 7);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (66, 52, 10, 1);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (67, 16, 10, 2);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (68, 14, 10, 3);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (69, 3, 10, 4);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (70, 43, 10, 5);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (71, 79, 10, 6);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (72, 57, 10, 7);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (73, 20, 10, 8);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (74, 41, 10, 9);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (75, 46, 10, 10);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (76, 24, 11, 1);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (77, 65, 11, 2);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (78, 49, 11, 3);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (79, 63, 11, 4);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (80, 38, 11, 5);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (81, 86, 11, 6);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (82, 81, 11, 7);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (83, 93, 11, 8);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (84, 17, 11, 9);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (85, 30, 11, 10);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (86, 7, 12, 1);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (87, 50, 12, 2);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (88, 87, 12, 3);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (89, 86, 12, 4);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (90, 7, 13, 1);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (91, 7, 14, 1);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (92, 27, 14, 2);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (93, 57, 14, 3);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (94, 47, 14, 4);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (95, 89, 15, 1);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (96, 78, 15, 2);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (97, 52, 15, 3);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (98, 60, 15, 4);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (99, 49, 15, 5);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (100, 65, 15, 6);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (101, 53, 15, 7);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (102, 72, 15, 8);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (103, 91, 15, 9);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (104, 71, 15, 10);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (105, 71, 17, 1);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (106, 53, 17, 2);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (107, 51, 18, 1);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (108, 34, 19, 1);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (109, 84, 19, 2);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (110, 2, 19, 3);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (111, 27, 20, 1);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (112, 59, 20, 2);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (113, 51, 20, 3);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (114, 96, 20, 4);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (115, 58, 20, 5);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (116, 76, 21, 1);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (117, 14, 21, 2);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (118, 48, 23, 1);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (119, 29, 25, 1);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (120, 59, 25, 2);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (121, 19, 25, 3);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (122, 99, 25, 4);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (123, 77, 25, 5);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (124, 96, 27, 1);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (125, 50, 27, 2);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (126, 50, 28, 1);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (127, 63, 28, 2);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (128, 21, 28, 3);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (129, 41, 28, 4);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (130, 60, 28, 5);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (131, 87, 28, 6);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (132, 31, 28, 7);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (133, 17, 28, 8);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (134, 45, 28, 9);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (135, 38, 29, 1);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (136, 55, 29, 2);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (137, 73, 29, 3);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (138, 21, 29, 4);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (139, 3, 29, 5);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (140, 65, 29, 6);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (141, 48, 29, 7);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (142, 6, 29, 8);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (143, 69, 29, 9);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (144, 27, 29, 10);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (145, 77, 30, 1);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (146, 3, 30, 2);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (147, 76, 30, 3);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (148, 16, 30, 4);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (149, 68, 31, 1);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (150, 78, 31, 2);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (151, 61, 31, 3);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (152, 6, 31, 4);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (153, 78, 32, 1);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (154, 18, 32, 2);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (155, 62, 32, 3);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (156, 50, 32, 4);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (157, 44, 32, 5);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (158, 2, 32, 6);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (159, 40, 32, 7);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (160, 38, 32, 8);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (161, 33, 32, 9);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (162, 10, 32, 10);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (163, 12, 33, 1);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (164, 18, 33, 2);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (165, 65, 33, 3);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (166, 10, 33, 4);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (167, 2, 33, 5);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (168, 56, 33, 6);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (169, 92, 33, 7);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (170, 46, 33, 8);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (171, 91, 33, 9);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (172, 33, 33, 10);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (173, 76, 35, 1);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (174, 51, 36, 1);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (175, 61, 36, 2);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (176, 52, 36, 3);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (177, 78, 36, 4);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (178, 63, 36, 5);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (179, 46, 36, 6);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (180, 77, 36, 7);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (181, 89, 36, 8);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (182, 58, 37, 1);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (183, 39, 37, 2);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (184, 53, 37, 3);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (185, 6, 37, 4);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (186, 68, 37, 5);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (187, 37, 37, 6);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (188, 69, 37, 7);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (189, 74, 37, 8);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (190, 25, 37, 9);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (191, 18, 38, 1);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (192, 85, 38, 2);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (193, 83, 38, 3);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (194, 79, 38, 4);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (195, 37, 38, 5);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (196, 65, 38, 6);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (197, 89, 38, 7);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (198, 62, 38, 8);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (199, 78, 38, 9);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (200, 84, 39, 1);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (201, 33, 39, 2);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (202, 5, 39, 3);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (203, 91, 39, 4);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (204, 10, 39, 5);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (205, 56, 39, 6);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (206, 57, 39, 7);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (207, 95, 40, 1);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (208, 85, 40, 2);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (209, 27, 40, 3);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (210, 23, 40, 4);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (211, 45, 40, 5);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (212, 26, 40, 6);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (213, 7, 40, 7);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (214, 57, 40, 8);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (215, 55, 40, 9);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (216, 24, 40, 10);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (217, 90, 41, 1);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (218, 60, 41, 2);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (219, 92, 41, 3);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (220, 63, 41, 4);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (221, 84, 41, 5);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (222, 22, 42, 1);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (223, 61, 42, 2);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (224, 85, 42, 3);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (225, 88, 42, 4);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (226, 21, 42, 5);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (227, 94, 42, 6);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (228, 50, 42, 7);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (229, 90, 42, 8);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (230, 76, 42, 9);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (231, 25, 43, 1);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (232, 1, 43, 2);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (233, 33, 43, 3);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (234, 91, 44, 1);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (235, 93, 46, 1);
-INSERT INTO public.books_on_the_shelves (id, edition_id, shelf_id, "position")
+INSERT INTO public.books_shelves (id, edition_id, shelf_id, "position")
 VALUES (236, 65, 46, 2);
 
 

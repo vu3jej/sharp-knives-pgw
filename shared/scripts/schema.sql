@@ -42,9 +42,53 @@ CREATE EXTENSION IF NOT EXISTS citext WITH SCHEMA public;
 COMMENT ON EXTENSION citext IS 'data type for case-insensitive character strings';
 
 
+--
+-- Name: pgcrypto; Type: EXTENSION; Schema: -; Owner: 
+--
+
+CREATE EXTENSION IF NOT EXISTS pgcrypto WITH SCHEMA public;
+
+
+--
+-- Name: EXTENSION pgcrypto; Type: COMMENT; Schema: -; Owner: 
+--
+
+COMMENT ON EXTENSION pgcrypto IS 'cryptographic functions';
+
+
+--
+-- Name: appointment_type; Type: TYPE; Schema: public; Owner: pgw
+--
+
+CREATE TYPE public.appointment_type AS ENUM (
+    'email',
+    'phone',
+    'text',
+    'other',
+    'in_person',
+    'note'
+);
+
+
+ALTER TYPE public.appointment_type OWNER TO pgw;
+
 SET default_tablespace = '';
 
 SET default_with_oids = false;
+
+--
+-- Name: ar_internal_metadata; Type: TABLE; Schema: public; Owner: pgw
+--
+
+CREATE TABLE public.ar_internal_metadata (
+    key character varying NOT NULL,
+    value character varying,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+ALTER TABLE public.ar_internal_metadata OWNER TO pgw;
 
 --
 -- Name: authors; Type: TABLE; Schema: public; Owner: pgw
@@ -125,7 +169,8 @@ ALTER SEQUENCE public.authors_id_seq OWNED BY public.authors.id;
 CREATE TABLE public.books (
     id integer NOT NULL,
     name character varying NOT NULL,
-    created_at timestamp without time zone DEFAULT now()
+    created_at timestamp without time zone DEFAULT now(),
+    isbn uuid DEFAULT public.gen_random_uuid() NOT NULL
 );
 
 
@@ -187,42 +232,6 @@ ALTER SEQUENCE public.books_id_seq OWNED BY public.books.id;
 
 
 --
--- Name: books_on_the_shelves; Type: TABLE; Schema: public; Owner: pgw
---
-
-CREATE TABLE public.books_on_the_shelves (
-    id integer NOT NULL,
-    edition_id integer NOT NULL,
-    shelf_id integer NOT NULL,
-    "position" integer NOT NULL,
-    CONSTRAINT books_on_the_shelves_position_check CHECK (("position" > 0))
-);
-
-
-ALTER TABLE public.books_on_the_shelves OWNER TO pgw;
-
---
--- Name: books_on_the_shelves_id_seq; Type: SEQUENCE; Schema: public; Owner: pgw
---
-
-CREATE SEQUENCE public.books_on_the_shelves_id_seq
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
-ALTER TABLE public.books_on_the_shelves_id_seq OWNER TO pgw;
-
---
--- Name: books_on_the_shelves_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: pgw
---
-
-ALTER SEQUENCE public.books_on_the_shelves_id_seq OWNED BY public.books_on_the_shelves.id;
-
-
---
 -- Name: editions; Type: TABLE; Schema: public; Owner: pgw
 --
 
@@ -259,12 +268,48 @@ ALTER SEQUENCE public.editions_id_seq OWNED BY public.editions.id;
 
 
 --
+-- Name: editions_shelves; Type: TABLE; Schema: public; Owner: pgw
+--
+
+CREATE TABLE public.editions_shelves (
+    id integer NOT NULL,
+    edition_id integer NOT NULL,
+    shelf_id integer NOT NULL,
+    "position" integer NOT NULL,
+    CONSTRAINT editions_shelves_position_check CHECK (("position" > 0))
+);
+
+
+ALTER TABLE public.editions_shelves OWNER TO pgw;
+
+--
+-- Name: editions_shelves_id_seq; Type: SEQUENCE; Schema: public; Owner: pgw
+--
+
+CREATE SEQUENCE public.editions_shelves_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.editions_shelves_id_seq OWNER TO pgw;
+
+--
+-- Name: editions_shelves_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: pgw
+--
+
+ALTER SEQUENCE public.editions_shelves_id_seq OWNED BY public.editions_shelves.id;
+
+
+--
 -- Name: genres; Type: TABLE; Schema: public; Owner: pgw
 --
 
 CREATE TABLE public.genres (
     id integer NOT NULL,
-    name character varying NOT NULL,
+    name public.citext NOT NULL,
     created_at timestamp without time zone DEFAULT now()
 );
 
@@ -302,7 +347,7 @@ CREATE TABLE public.ratings (
     edition_id integer NOT NULL,
     rating integer NOT NULL,
     review text,
-    CONSTRAINT ratings_rating_check CHECK (((0 < rating) AND (rating <= 5)))
+    CONSTRAINT ratings_rating_check CHECK (((0 <= rating) AND (rating <= 5)))
 );
 
 
@@ -328,6 +373,17 @@ ALTER TABLE public.ratings_id_seq OWNER TO pgw;
 
 ALTER SEQUENCE public.ratings_id_seq OWNED BY public.ratings.id;
 
+
+--
+-- Name: schema_migrations; Type: TABLE; Schema: public; Owner: pgw
+--
+
+CREATE TABLE public.schema_migrations (
+    version character varying NOT NULL
+);
+
+
+ALTER TABLE public.schema_migrations OWNER TO pgw;
 
 --
 -- Name: shelves; Type: TABLE; Schema: public; Owner: pgw
@@ -433,14 +489,14 @@ ALTER TABLE ONLY public.books_genres ALTER COLUMN id SET DEFAULT nextval('public
 -- Name: id; Type: DEFAULT; Schema: public; Owner: pgw
 --
 
-ALTER TABLE ONLY public.books_on_the_shelves ALTER COLUMN id SET DEFAULT nextval('public.books_on_the_shelves_id_seq'::regclass);
+ALTER TABLE ONLY public.editions ALTER COLUMN id SET DEFAULT nextval('public.editions_id_seq'::regclass);
 
 
 --
 -- Name: id; Type: DEFAULT; Schema: public; Owner: pgw
 --
 
-ALTER TABLE ONLY public.editions ALTER COLUMN id SET DEFAULT nextval('public.editions_id_seq'::regclass);
+ALTER TABLE ONLY public.editions_shelves ALTER COLUMN id SET DEFAULT nextval('public.editions_shelves_id_seq'::regclass);
 
 
 --
@@ -472,6 +528,14 @@ ALTER TABLE ONLY public.users ALTER COLUMN id SET DEFAULT nextval('public.users_
 
 
 --
+-- Name: ar_internal_metadata_pkey; Type: CONSTRAINT; Schema: public; Owner: pgw
+--
+
+ALTER TABLE ONLY public.ar_internal_metadata
+    ADD CONSTRAINT ar_internal_metadata_pkey PRIMARY KEY (key);
+
+
+--
 -- Name: authors_books_position_unique; Type: CONSTRAINT; Schema: public; Owner: pgw
 --
 
@@ -491,7 +555,7 @@ ALTER TABLE ONLY public.authors
 -- Name: books_are_ordered_in_a_shelf; Type: CONSTRAINT; Schema: public; Owner: pgw
 --
 
-ALTER TABLE ONLY public.books_on_the_shelves
+ALTER TABLE ONLY public.editions_shelves
     ADD CONSTRAINT books_are_ordered_in_a_shelf UNIQUE (shelf_id, "position");
 
 
@@ -504,11 +568,11 @@ ALTER TABLE ONLY public.books_genres
 
 
 --
--- Name: books_on_the_shelves_pkey; Type: CONSTRAINT; Schema: public; Owner: pgw
+-- Name: books_isbn_key; Type: CONSTRAINT; Schema: public; Owner: pgw
 --
 
-ALTER TABLE ONLY public.books_on_the_shelves
-    ADD CONSTRAINT books_on_the_shelves_pkey PRIMARY KEY (id);
+ALTER TABLE ONLY public.books
+    ADD CONSTRAINT books_isbn_key UNIQUE (isbn);
 
 
 --
@@ -536,6 +600,14 @@ ALTER TABLE ONLY public.editions
 
 
 --
+-- Name: editions_shelves_pkey; Type: CONSTRAINT; Schema: public; Owner: pgw
+--
+
+ALTER TABLE ONLY public.editions_shelves
+    ADD CONSTRAINT editions_shelves_pkey PRIMARY KEY (id);
+
+
+--
 -- Name: email_must_be_unique; Type: CONSTRAINT; Schema: public; Owner: pgw
 --
 
@@ -555,8 +627,16 @@ ALTER TABLE ONLY public.genres
 -- Name: one_book_once_in_a_shelf; Type: CONSTRAINT; Schema: public; Owner: pgw
 --
 
-ALTER TABLE ONLY public.books_on_the_shelves
+ALTER TABLE ONLY public.editions_shelves
     ADD CONSTRAINT one_book_once_in_a_shelf UNIQUE (shelf_id, edition_id);
+
+
+--
+-- Name: one_review_per_edition; Type: CONSTRAINT; Schema: public; Owner: pgw
+--
+
+ALTER TABLE ONLY public.ratings
+    ADD CONSTRAINT one_review_per_edition UNIQUE (edition_id, user_id);
 
 
 --
@@ -573,6 +653,14 @@ ALTER TABLE ONLY public.editions
 
 ALTER TABLE ONLY public.ratings
     ADD CONSTRAINT ratings_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: schema_migrations_pkey; Type: CONSTRAINT; Schema: public; Owner: pgw
+--
+
+ALTER TABLE ONLY public.schema_migrations
+    ADD CONSTRAINT schema_migrations_pkey PRIMARY KEY (version);
 
 
 --
@@ -597,6 +685,13 @@ ALTER TABLE ONLY public.shelves
 
 ALTER TABLE ONLY public.users
     ADD CONSTRAINT users_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: fast_user_editions_lookup; Type: INDEX; Schema: public; Owner: pgw
+--
+
+CREATE UNIQUE INDEX fast_user_editions_lookup ON public.ratings USING btree (user_id, edition_id);
 
 
 --
@@ -632,27 +727,27 @@ ALTER TABLE ONLY public.books_genres
 
 
 --
--- Name: books_on_the_shelves_edition_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: pgw
---
-
-ALTER TABLE ONLY public.books_on_the_shelves
-    ADD CONSTRAINT books_on_the_shelves_edition_id_fkey FOREIGN KEY (edition_id) REFERENCES public.editions(id);
-
-
---
--- Name: books_on_the_shelves_shelf_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: pgw
---
-
-ALTER TABLE ONLY public.books_on_the_shelves
-    ADD CONSTRAINT books_on_the_shelves_shelf_id_fkey FOREIGN KEY (shelf_id) REFERENCES public.shelves(id);
-
-
---
 -- Name: editions_book_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: pgw
 --
 
 ALTER TABLE ONLY public.editions
     ADD CONSTRAINT editions_book_id_fkey FOREIGN KEY (book_id) REFERENCES public.books(id);
+
+
+--
+-- Name: editions_shelves_edition_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: pgw
+--
+
+ALTER TABLE ONLY public.editions_shelves
+    ADD CONSTRAINT editions_shelves_edition_id_fkey FOREIGN KEY (edition_id) REFERENCES public.editions(id);
+
+
+--
+-- Name: editions_shelves_shelf_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: pgw
+--
+
+ALTER TABLE ONLY public.editions_shelves
+    ADD CONSTRAINT editions_shelves_shelf_id_fkey FOREIGN KEY (shelf_id) REFERENCES public.shelves(id);
 
 
 --

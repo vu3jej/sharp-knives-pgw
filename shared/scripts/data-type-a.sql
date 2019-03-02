@@ -365,7 +365,7 @@ COPY public.shelves (id, name, user_id, description) FROM stdin;
 -- Data for Name: books_on_the_shelves; Type: TABLE DATA; Schema: public; Owner: pgw
 --
 
-COPY public.books_on_the_shelves (id, edition_id, shelf_id, "position") FROM stdin;
+COPY public.books_shelves (id, edition_id, shelf_id, "position") FROM stdin;
 1	81	1	1
 2	93	1	2
 3	25	1	3
